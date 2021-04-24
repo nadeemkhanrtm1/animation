@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            width: 339px;
+            height: 300px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            overflow: hidden;
+
+        }
+        .container{
+            height: 300px;
+            width: 100px;
+            margin-right: 7px;
+            animation: heightInc 1s linear forwards;
+        }
+        .container1{
+            opacity: 0;
+            animation: heightInc1 1s linear forwards 2200ms;
+        }
+        .container2{
+            position: relative;
+            z-index: 999;
+            opacity: 1;
+            animation: heightInc2 1s linear forwards 3s;
+        }
+        .container3{
+            opacity: 0;
+            animation: heightInc3 1s linear forwards 1100ms;
+        }
+        @keyframes heightInc3 {
+            from{
+                left:-30%;
+                opacity: 1;
+            }
+            to{
+                left: 0%;
+                opacity:1;
+            }
+        }
+
+        @keyframes heightInc2 {
+            0%{
+                z-index: -111;
+            }
+            100%{
+                z-index: -111;
+                transform: rotate(-41deg)
+            }
+        }
+
+        @keyframes heightInc1 {
+            0%{
+                opacity: 1;
+                right:-30%;
+            }
+            100%{
+                opacity: 1;
+                right:0%;
+            }
+        }
+        .container3{
+            position: relative;
+            z-index: 22;
+            
+        }
+         .container1{
+            position: relative;
+            z-index: 11;
+            right: 50%;
+        }
+        .container22{
+            animation: roate 1s linear forwards,heightInc2 1s linear forwards 3300ms;
+        }
+
+        @keyframes roate {
+            from{
+                transform: translateY(100%);
+            }
+            to{
+                transform: translateY(0%);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+    <img src="./blue.svg" class="container container1"/>
+    <img src="./brownish.svg" class="container container2 container22"/>
+    <img src="./yellow.svg" class="container container3"/>
+</div>
+</body>
+</html>
